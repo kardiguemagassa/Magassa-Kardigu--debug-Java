@@ -6,26 +6,18 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Simple brute force implementation
- *
- */
+
 public class ReadSymptomDataFromFile implements ISymptomReader {
 
-	private String filepath;
-	
-	/**
-	 * 
-	 * @param filepath a full or partial path to file with symptom strings in it, one per line
-	 */
+	private String filepath = "/Users/kara/Documents/dev-env/open-c/projet/Magassa-Kardigu--debug-Java/Project02Eclipse/symptoms.txt";
 
 	public ReadSymptomDataFromFile (String filepath) {
 		this.filepath = filepath;
 	}
 
-
 	@Override
 	public List<String> getSymptoms() {
+
 		ArrayList<String> result = new ArrayList<String>();
 		
 		if (filepath != null) {
@@ -41,11 +33,11 @@ public class ReadSymptomDataFromFile implements ISymptomReader {
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
+		} else {
+			System.out.println("Invalid file path.");
 		}
 		
 		return result;
 	}
-
-
 
 }
