@@ -1,8 +1,13 @@
 package com.hemebiotech.analytics;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.FileReader;
 import java.io.FileWriter;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 
 public class AnalyticsCounter {
 
@@ -12,8 +17,8 @@ public class AnalyticsCounter {
 	
 	public static void main(String args[]) throws Exception {
 
-		// first get input
-		BufferedReader reader = new BufferedReader (new FileReader("symptoms.txt"));
+		BufferedReader reader = new BufferedReader (
+				new FileReader("/Users/kara/Documents/dev-env/open-c/projet/Magassa-Kardigu--debug-Java/Project02Eclipse/symptoms.txt"));
 		String line = reader.readLine();
 
 		int i = 0;
@@ -42,5 +47,6 @@ public class AnalyticsCounter {
 		writer.write("rash: " + rashCount + "\n");
 		writer.write("dialated pupils: " + pupilCount + "\n");
 		writer.close();
+
 	}
 }

@@ -10,7 +10,7 @@ import java.util.List;
  * The implementation does not need to order the list
  * 
  */
-public interface IsymptomReader {
+public interface ISymptomReader {
 	/**
 	 * If no data is available, return an empty List
 	 * 
