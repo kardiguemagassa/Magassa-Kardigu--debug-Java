@@ -5,25 +5,22 @@ import java.util.Map;
 
 public class Main {
 
-    public static void main( String args[] ) throws Exception {
+    public static void main(String[] args) throws Exception {
 
-        // 1. Instancie des objets qui implémentent les interfaces ISymptomReader et ISymptomWriter
-        ISymptomReader symptomReader = new ReadSymptomDataFromFile("/Users/kara/Documents/dev-env/open-c/projet/Magassa-Kardigu--debug-Java/Project02Eclipse/symptoms.txt");
-        ISymptomWriter symptomWriter = new WriteSymptomDataToFile("/Users/kara/Documents/dev-env/open-c/projet/Magassa-Kardigu--debug-Java/Project02Eclipse/result.out");
 
-        // 2. Crée un objet AnalyticsCounter avec les readers et writers
-        AnalyticsCounter analyticsCounter = new AnalyticsCounter(symptomReader, symptomWriter);
+        IsymptomReader iSymptomReader = new ReadSymptomDataFromFile(
+                "/Users/kara/Documents/dev-env/open-c/projet/Magassa-Kardigu--debug-Java/Project02Eclipse/symptoms.txt");
+        IsymptomWriter iSymptomWriter = new WriteSymptomDataToFile(
+                "/Users/kara/Documents/dev-env/open-c/projet/Magassa-Kardigu--debug-Java/Project02Eclipse/result.out");
 
-        //
+        AnalyticsCounter analyticsCounter = new AnalyticsCounter(iSymptomReader, iSymptomWriter);
+
         List<String> getSymptoms = analyticsCounter.getSymptoms();
 
-        // 3. Compte les occurrences des symptômes
-        Map<String, Integer> symptomCounts = analyticsCounter.countSymptoms(getSymptoms);
+        Map<String, Integer> countSymptoms = AnalyticsCounter.countSymptoms(getSymptoms);
 
-        // Trie les symptômes par nom
-        Map<String, Integer> sortedSymptoms = analyticsCounter.sortSymptoms(symptomCounts);
+        Map<String, Integer> sortSymptoms = analyticsCounter.sortSymptoms(countSymptoms);
 
-        // Écrit les résultats dans un fichier
-        analyticsCounter.writeSymptoms(sortedSymptoms);
+        analyticsCounter.writeSymptoms(sortSymptoms);
     }
 }

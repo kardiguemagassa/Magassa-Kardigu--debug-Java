@@ -3,9 +3,8 @@ package com.hemebiotech.analytics;
 import java.io.*;
 import java.util.Map;
 
-public class WriteSymptomDataToFile implements ISymptomWriter{
+public class WriteSymptomDataToFile implements IsymptomWriter{
 
-    //private String filePath = "/Users/kara/Documents/dev-env/open-c/projet/Magassa-Kardigu--debug-Java/Project02Eclipse/result.out";
     private String filePath;
 
     public WriteSymptomDataToFile(String filePath) {
@@ -22,6 +21,7 @@ public class WriteSymptomDataToFile implements ISymptomWriter{
                 for (Map.Entry<String, Integer> entry : symptoms.entrySet()) {
                     bufferedWriter.write(entry.getKey() + ": " + entry.getValue());
                     bufferedWriter.newLine();
+                    System.out.println(entry.getKey() + ": " + entry.getValue());
                 }
                 bufferedWriter.close();
             } catch (IOException e) {

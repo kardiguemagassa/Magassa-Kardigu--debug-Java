@@ -2,7 +2,7 @@ package com.hemebiotech.analytics;
 
 import java.util.List;
 
-public interface ISymptomReader {
+public interface IsymptomReader {
 
 	List<String> getSymptoms ();
 }

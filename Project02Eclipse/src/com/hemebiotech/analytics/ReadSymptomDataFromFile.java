@@ -7,13 +7,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class ReadSymptomDataFromFile implements ISymptomReader {
+public class ReadSymptomDataFromFile implements IsymptomReader {
 
-	//private String filepath = "/Users/kara/Documents/dev-env/open-c/projet/Magassa-Kardigu--debug-Java/Project02Eclipse/symptoms.txt";
-	private String filepath;
+	private String filePath;
 
-	public ReadSymptomDataFromFile (String filepath) {
-		this.filepath = filepath;
+	public ReadSymptomDataFromFile (String filePath) {
+		this.filePath = filePath;
 	}
 
 	@Override
@@ -21,15 +20,17 @@ public class ReadSymptomDataFromFile implements ISymptomReader {
 
 		ArrayList<String> result = new ArrayList<String>();
 		
-		if (filepath != null) {
+		if (filePath != null) {
 			try {
-				BufferedReader reader = new BufferedReader (new FileReader(filepath));
+				BufferedReader reader = new BufferedReader (new FileReader(filePath));
 				String line = reader.readLine();
 				
 				while (line != null) {
 					result.add(line);
 					line = reader.readLine();
+					System.out.println(line);
 				}
+				System.out.println();
 				reader.close();
 			} catch (IOException e) {
 				e.printStackTrace();
