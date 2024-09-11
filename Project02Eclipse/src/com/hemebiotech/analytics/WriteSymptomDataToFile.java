@@ -5,7 +5,8 @@ import java.util.Map;
 
 public class WriteSymptomDataToFile implements ISymptomWriter{
 
-    private String filePath = "/Users/kara/Documents/dev-env/open-c/projet/Magassa-Kardigu--debug-Java/Project02Eclipse/result.out";
+    //private String filePath = "/Users/kara/Documents/dev-env/open-c/projet/Magassa-Kardigu--debug-Java/Project02Eclipse/result.out";
+    private String filePath;
 
     public WriteSymptomDataToFile(String filePath) {
         this.filePath = filePath;

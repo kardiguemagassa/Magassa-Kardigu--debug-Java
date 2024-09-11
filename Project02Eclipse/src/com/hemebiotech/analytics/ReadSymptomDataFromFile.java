@@ -9,7 +9,8 @@ import java.util.List;
 
 public class ReadSymptomDataFromFile implements ISymptomReader {
 
-	private String filepath = "/Users/kara/Documents/dev-env/open-c/projet/Magassa-Kardigu--debug-Java/Project02Eclipse/symptoms.txt";
+	//private String filepath = "/Users/kara/Documents/dev-env/open-c/projet/Magassa-Kardigu--debug-Java/Project02Eclipse/symptoms.txt";
+	private String filepath;
 
 	public ReadSymptomDataFromFile (String filepath) {
 		this.filepath = filepath;
