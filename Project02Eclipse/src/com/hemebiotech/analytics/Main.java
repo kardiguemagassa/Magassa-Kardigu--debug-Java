@@ -7,11 +7,10 @@ public class Main {
 
     public static void main(String[] args) throws Exception {
 
-
         IsymptomReader iSymptomReader = new ReadSymptomDataFromFile(
-                "/Users/kara/Documents/dev-env/open-c/projet/Magassa-Kardigu--debug-Java/Project02Eclipse/symptoms.txt");
+                "/Users/kara/Documents/dev-env/open-c/projet/p-02/Magassa-Kardigu--debug-Java/Project02Eclipse/symptoms.txt");
         IsymptomWriter iSymptomWriter = new WriteSymptomDataToFile(
-                "/Users/kara/Documents/dev-env/open-c/projet/Magassa-Kardigu--debug-Java/Project02Eclipse/result.out");
+                "/Users/kara/Documents/dev-env/open-c/projet/p-02/Magassa-Kardigu--debug-Java/Project02Eclipse/result.out");
 
         AnalyticsCounter analyticsCounter = new AnalyticsCounter(iSymptomReader, iSymptomWriter);
 
